@@ -1,0 +1,29 @@
+name = HCC Labtheme
+description = A simple yet flexible theme for quick, cheap lab websites
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[header_right]   = 'Header right'
+regions[hero]           = 'Hero'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[left_column]    = 'Left column'
+regions[right_sidebar]  = 'Right column'
+regions[footer]         = 'Footer'
+regions[footer_logos]   = 'Footer logos'
+regions[footer_legal]   = 'Footer legal'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/style.css

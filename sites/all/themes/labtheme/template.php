@@ -9,10 +9,10 @@
  * Implements hook_preprocess_page().
  */
 function labtheme_preprocess_page(&$variables) {
-  if (!empty($variables['page']['sidebar_first'])) {
+  if (!empty($variables['page']['left_column'])) {
     $variables['content_column_class'] = ' class="col-md-9 col-sm-12"';
   }
-  if (!empty($variables['page']['sidebar_second'])) {
+  if (!empty($variables['page']['right_column'])) {
     $variables['content_column_class'] = ' class="col-md-8 col-sm-12"';
   }
 	if ( isset($variables['navbar_classes_array']) ) {

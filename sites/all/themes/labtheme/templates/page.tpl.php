@@ -73,16 +73,28 @@
  * @ingroup templates
  */
 ?>
+<?php
+  $logo_width = 'col-sm-9';
+  if (!empty($page['header_center'])) {
+    $logo_width = 'col-sm-6';
+  }
+?>
+
 <header role="banner" class="">
   <div class="container">
     <div class="header-logo row">
       <?php if ($logo): ?>
-        <div class="col-sm-9">
+      <div class="<?php print $logo_width; ?>">
           <a class="logo navbar-btn" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
           </a>
         </div>
       <?php endif; ?>
+    <?php if (!empty($page['header_center'])): ?>
+      <div class="col-sm-3">
+        <?php print render($page['header_center']); ?>
+      </div>
+    <?php endif; ?>
     <?php if (!empty($page['header_right'])): ?>
       <div class="col-sm-3">
         <?php print render($page['header_right']); ?>
@@ -125,6 +137,7 @@
 <div class="main-container content-area-color">
   <div class="container">
     <div class="row">
+    <div class="main-container-margin">
     <?php if (!empty($page['left_column'])): ?>
       <aside class="col-sm-3 hidden-xs" role="complementary">
         <?php print render($page['left_column']); ?>
@@ -136,7 +149,7 @@
       <a id="main-content"></a>
       <div class="main-content-margin">
         <?php print render($title_prefix); ?>
-        <?php if (!empty($title)): ?>
+        <?php if (!empty($title) && !$is_front) : ?>
           <h1><?php print $title; ?></h1>
         <?php endif; ?>
         <?php print render($title_suffix); ?>
@@ -162,11 +175,13 @@
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
 
+      </div><!-- /main-container-margin -->
     </div><!-- /row -->
   </div><!-- /container -->
 </div><!-- /main-container -->
 
-<footer class="footer container">
+<footer>
+<div class="footer container">
 	<?php if (!empty($page['footer_logos']) || !empty($page['footer_legal'])): ?>
 		<div class="row">
 			<?php if (!empty($page['footer_logos'])): ?>
@@ -182,5 +197,6 @@
 		</div>
 	<?php endif; ?>
 	<?php print render($page['footer']); ?>
+  </div>
 </footer>
 

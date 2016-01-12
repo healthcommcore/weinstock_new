@@ -65,15 +65,43 @@
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <?php print $scripts; ?>
 </head>
+  <!--[if lt IE 9]>
+    <body class="<?php print $classes . ' ieclass'; ?>" <?php print $attributes;?>>
+  <![endif]-->
+  <!--[if !IE]>-->
 <body<?php print $body_attributes; ?>>
+  <!--<![endif]-->
+
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+
+<!-- Popup window for external links -->
+<script>
+(function($){
+	var extLinks = $('.popup');
+	var width = $(window).width() / 1.5;
+	var height = $(window).height();
+	var xPos = window.screenX + (window.outerWidth - width) / 2;
+	var yPos = window.screenY + (window.outerHeight - height) / 2;;
+	var options = "scrollbars, resizable, menubar, toolbar, status=0 ,location," + 
+		"height=" + height + ",width=" + width + 
+		",top=" + yPos + ",left=" + xPos;
+	for(var i = 0; i < extLinks.length; i++){
+		extLinks[i].onclick = function(){
+			window.open(this.href, this.value, options);
+			return false;
+		}
+	}
+})(jQuery);
+</script>
+
 </body>
 </html>

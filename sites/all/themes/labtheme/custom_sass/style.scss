@@ -1,51 +1,253 @@
+//@import '../bootstrap_sass/bootstrap.scss';
+@import 'fonts.scss';
+
+
+/* Mixins */
+@mixin menustyle {
+	float: left;
+	list-style: none;
+}
+
+@mixin border ($type, $size, $color) {
+  border-#{$type}-width: $size;
+  border-#{$type}-style: solid;
+  border-#{$type}-color: $color;
+}
+
+
 /* Variables */
+
+/* Generic colors */
 $dk-blue: #17334b;
 $med-blue: #477aa6;
 $lt-blue: #9bc7ed;
-
 $dk-gray: #404347;
-$lt-gray: #ccc;
+$gray: #5C6470;
+$lt-gray: #ddd;
 $lt-bluegray: #c2ccd0;
+$white: #fff;
+
+
+/* fonts */
+$body-font: 'OpenSansRegular';
+$bold-font: 'OpenSansBold';
+$lt-font: 'OpenSansLight';
+
+    
+$header-color: $dk-blue;
+$header-padding: 30px 0;
+
+$search-position: 20px 0 0 0;
+$content-area-color: $white;
+
+$hero-position: 50px 0 0 30px;
+$hero-size: 3.0em;
+$hero-color: $white;
+$hero-style: $bold-font;
+$hero-img-ht: 400px;
+$hero-img-img: url('../images/hero_img2_reduced.jpg') 0 0 no-repeat;
+
+
+
+/* navbar */
+$nav-color: $med-blue;
+$navlink-bkgrd-active: $lt-blue;
+$navlink-link: $white;
+$navlink-link-active: $med-blue;
+$navlink-padding: 15px 15px 15px 15px;
+$navlink-size: 20px;
+
+/* submenu */
+$submenu-color: $white;
+$submenu-link-bkgrd-active: $lt-gray;
+$submenu-link-link: $med-blue;
+$submenu-link-link-active: $dk-blue;
+$submenu-link-padding: 15px 15px 15px 15px;
+$submenu-link-size: 1.2em;
+
+
+
+
+/* Main content */
+$body-color: $dk-gray;
+$body-size: 1.3em;
+$link-color: $med-blue;
+
+$main-container-margin: 40px 0 0 0;
+$main-content-margin: 0 60px 80px 30px;
+
+/*
+$h2-color:
+$h3-color:
+*/
+$h1-size: 3.0em;
+$h1-color: $dk-blue;
+$h1-style: $lt-font;
+/*
+$h2-size:
+$h3-size:
+*/
+
+
+
+$footer-color: $gray;
+$footer-border-color: $lt-bluegray;
+
+
+
+
+$footer-legal-size: 1.1em;
+$footer-font-color: $white;
+
 
 body {
-  background: $dk-gray;
+  background: $footer-color;
+  font-size: 14px;
+  font-family: $body-font;
+  color: $body-color;
+}
+
+a {
+  color: $link-color;
+}
+
+h1, h2, h3, h4, strong {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: $h1-size;
+  color: $h1-color;
+  font-family: $h1-style;
 }
 
 header {
-  background: $dk-blue;
-  padding: 15px 0;
-  border-bottom: $dk-blue 1px solid;
+  background: $header-color;
+  padding: $header-padding;
   .logo img {
     margin-top: 20px;
+  }
+  .block-search {
+    margin: $search-position;
   }
 }
 
 .navbar-color {
-  background: $lt-gray;
+  background: $nav-color;
+}
+
+.navbar-nav > li > a {
+  color: $navlink-link;
+  font-size: $navlink-size;
+  padding: $navlink-padding;
+}
+
+.nav > li > a:hover,
+.nav > li > a.active,
+.nav > li.active-trail a.active-trail,
+.nav > li > a:focus {
+  background: $navlink-bkgrd-active;
+  color: $navlink-link-active;
 }
 
 .hero {
   width: auto;
-  border-bottom: $dk-blue 3px solid;
-  border-top: $dk-blue 3px solid;
+  @include border(top, 3px, $header-color);
+  @include border(bottom, 3px, $header-color);
+  h1 {
+    font-size: $hero-size;
+    color: $hero-color;
+    font-family: $hero-style;
+    margin: $hero-position;
+  }
+  .hero-img {
+    height: $hero-img-ht;
+    background: $hero-img-img;
+    background-size: cover;
+  }
 }
 
-.hero-img {
-  height: 400px;
-  background: url('../images/hero_img2_reduced.jpg') 0 0 no-repeat;
-  background-size: cover;
+.submenu {
+  //margin: 30px 20px 0 0;
+  //font-family: $sinkin-semibold;
+  font-size: $submenu-link-size;
+  //text-align: right;
+  .nav {
+    li {
+      a {
+        font-weight: normal;
+        color: $submenu-link-link;
+        //padding: 10px 0;
+      }
+      a:hover,
+      a:focus,
+      a.active-trail {
+        color: $submenu-link-link-active;
+        background: $submenu-link-bkgrd-active;
+      }
+      a.active-trail {
+      }
+    }
+  }
+}
+
+
+.main-container {
+  font-size: $body-size;
 }
 
 .content-area-color {
-  background: #fff;
+  background: $content-area-color;
+}
+
+.main-container-margin {
+  margin: $main-container-margin;
 }
 
 .main-content-margin {
-  margin: 40px 60px 80px 30px;
+  margin: $main-content-margin;
+}
+
+footer {
+  @include border(top, 5px, $footer-border-color);
 }
 
 .footer {
   border-top: none;
+  margin-top:25px;
+}
+
+.footer-legal {
+  font-size: $footer-legal-size;
+  color: $footer-font-color;
+  p {
+    margin: 0;
+  }
+  a {
+    color: $footer-font-color;
+  }
+  ul {
+    padding-left: 0;
+    float: right;
+  }
+  li {
+    padding: 0 10px;
+    @include border(right, 1px, $footer-font-color);
+    @include menustyle;
+  }
+  li:first-child {
+   padding-left: 0;
+  }
+  li:last-child {
+      border: none;
+  }
+  .legal {
+    text-align: right;
+    font-size: 75%;
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
 @media (min-width: 1200px) {

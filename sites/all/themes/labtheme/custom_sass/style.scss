@@ -1,104 +1,6 @@
 //@import '../bootstrap_sass/bootstrap.scss';
 @import 'fonts.scss';
-
-
-/* Mixins */
-@mixin menustyle {
-	float: left;
-	list-style: none;
-}
-
-@mixin border ($type, $size, $color) {
-  border-#{$type}-width: $size;
-  border-#{$type}-style: solid;
-  border-#{$type}-color: $color;
-}
-
-
-/* Variables */
-
-/* Generic colors */
-$dk-blue: #17334b;
-$med-blue: #477aa6;
-$lt-blue: #9bc7ed;
-$dk-gray: #404347;
-$gray: #5C6470;
-$lt-gray: #ddd;
-$lt-bluegray: #c2ccd0;
-$white: #fff;
-
-
-/* fonts */
-$body-font: 'OpenSansRegular';
-$bold-font: 'OpenSansBold';
-$lt-font: 'OpenSansLight';
-
-    
-$header-color: $dk-blue;
-$header-padding: 30px 0;
-
-$search-position: 20px 0 0 0;
-$content-area-color: $white;
-
-$hero-position: 50px 0 0 30px;
-$hero-size: 3.0em;
-$hero-color: $white;
-$hero-style: $bold-font;
-$hero-img-ht: 400px;
-$hero-img-img: url('../images/hero_img2_reduced.jpg') 0 0 no-repeat;
-
-
-
-/* navbar */
-$nav-color: $med-blue;
-$navlink-bkgrd-active: $lt-blue;
-$navlink-link: $white;
-$navlink-link-active: $med-blue;
-$navlink-padding: 15px 15px 15px 15px;
-$navlink-size: 20px;
-
-/* submenu */
-$submenu-color: $white;
-$submenu-link-bkgrd-active: $lt-gray;
-$submenu-link-link: $med-blue;
-$submenu-link-link-active: $dk-blue;
-$submenu-link-padding: 15px 15px 15px 15px;
-$submenu-link-size: 1.2em;
-
-
-
-
-/* Main content */
-$body-color: $dk-gray;
-$body-size: 1.3em;
-$link-color: $med-blue;
-
-$main-container-margin: 40px 0 0 0;
-$main-content-margin: 0 60px 80px 30px;
-
-/*
-$h2-color:
-$h3-color:
-*/
-$h1-size: 3.0em;
-$h1-color: $dk-blue;
-$h1-style: $lt-font;
-/*
-$h2-size:
-$h3-size:
-*/
-
-
-
-$footer-color: $gray;
-$footer-border-color: $lt-bluegray;
-
-
-
-
-$footer-legal-size: 1.1em;
-$footer-font-color: $white;
-
+@import 'variables.scss';
 
 body {
   background: $footer-color;
@@ -119,6 +21,24 @@ h1 {
   font-size: $h1-size;
   color: $h1-color;
   font-family: $h1-style;
+  line-height: $h1-height;
+  margin: $h1-margin;
+}
+
+h2 {
+  font-size: $h2-size;
+  color: $h2-color;
+  font-family: $h2-style;
+  line-height: $h2-height;
+  margin: $h2-margin;
+}
+
+h3 {
+  font-size: $h3-size;
+  color: $h3-color;
+  font-family: $h3-style;
+  line-height: $h3-height;
+  margin: $h3-margin;
 }
 
 header {
@@ -134,6 +54,7 @@ header {
 
 .navbar-color {
   background: $nav-color;
+  font-family: $navlink-font;
 }
 
 .navbar-nav > li > a {
@@ -168,15 +89,21 @@ header {
 }
 
 .submenu {
-  //margin: 30px 20px 0 0;
-  //font-family: $sinkin-semibold;
+  text-align: right;
   font-size: $submenu-link-size;
+  font-family: $submenu-link-font;
   //text-align: right;
   .nav {
+    width: 80%;
+    float: right;
+    margin-top: 20px;
     li {
       a {
         font-weight: normal;
         color: $submenu-link-link;
+        display: inline-block;
+        padding: 3px 0 3px 18px;
+        margin-bottom: 26px;
         //padding: 10px 0;
       }
       a:hover,
@@ -208,6 +135,51 @@ header {
   margin: $main-content-margin;
 }
 
+.page-content {
+  line-height: $body-height;
+}
+
+.home-news {
+  font-family: $reg-font;
+  padding: 30px 20px;
+  color: $white;
+  font-size: 0.88em;
+  h2, a {
+    color: $white;
+  }
+  h2 {
+    font-family: $lt-font;
+    font-size: 2.0em;
+    @include border('bottom', 1px, $white);
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  a {
+    text-decoration: underline;
+  }
+  /*
+  .views-field-title,
+  .views-field-field-date {
+    font-family: $bold-font;
+  }
+  .views-row {
+    margin-bottom: 20px;
+  }
+  */
+}
+
+.no-bullets {
+  list-style: none;
+  li {
+    margin-bottom: 15px;
+  }
+}
+
+.img-float {
+  float: left;
+  margin: 5px 20px 3px 0;
+}
+
 footer {
   @include border(top, 5px, $footer-border-color);
 }
@@ -215,6 +187,12 @@ footer {
 .footer {
   border-top: none;
   margin-top:25px;
+}
+
+.footer-logos {
+  p {
+    margin-bottom: 20px;
+  }
 }
 
 .footer-legal {
@@ -250,8 +228,10 @@ footer {
   }
 }
 
-@media (min-width: 1200px) {
+.relative {
+  position: relative;
 }
+
 
 @media (min-width: 992px) and (max-width: 1199px) {
 }

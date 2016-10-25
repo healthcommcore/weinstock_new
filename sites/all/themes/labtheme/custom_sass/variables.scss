@@ -15,7 +15,7 @@
 /* Variables */
 
 /* Generic colors */
-$dk-blue: #17334b;
+$dk-blue: #022249;
 $med-blue: #477aa6;
 $lt-blue: #9bc7ed;
 $dk-gray: #404347;
@@ -25,12 +25,13 @@ $lt-bluegray: #c2ccd0;
 $white: #fff;
 
 /* fonts */
-$body-font: 'OpenSansLight';
-$bold-font: 'OpenSansBold';
-$lt-font: 'OpenSansLight';
-$reg-font: 'OpenSansRegular';
-$semi-font: 'OpenSansSemibold';
-
+$body-font: 'ingra';
+$accent-font: 'tenso';
+$lt-weight: 200;
+$reg-weight: 400;
+$med-weight: 500;
+$body-bold-weight: 600;
+$accent-bold-weight: 700;
     
 $header-color: $dk-blue;
 $header-padding: 25px 0 30px;
@@ -41,7 +42,7 @@ $content-area-color: $white;
 $hero-position: 50px 0 0 30px;
 $hero-size: 3.0em;
 $hero-color: $white;
-$hero-style: $bold-font;
+$hero-style: $accent-font;
 $hero-img-ht: 400px;
 $hero-img-img: url('../images/hero_img2_reduced.jpg') 0 0 no-repeat;
 
@@ -53,7 +54,7 @@ $navlink-link: $white;
 $navlink-link-active: $med-blue;
 $navlink-padding: 15px 15px 15px 15px;
 $navlink-size: 20px;
-$navlink-font: 'OpenSansRegular';
+$navlink-font: $accent-font;
 
 /* submenu */
 $submenu-color: $white;
@@ -62,7 +63,7 @@ $submenu-link-link: $med-blue;
 $submenu-link-link-active: $dk-blue;
 $submenu-link-padding: 15px 15px 15px 15px;
 $submenu-link-size: 1.2em;
-$submenu-link-font: $reg-font;
+$submenu-link-font: $accent-font;
 
 
 /* Main content */
@@ -78,24 +79,25 @@ $main-content-margin: 0 60px 80px 30px;
 
 $h1-size: 3.0em;
 $h1-color: $dk-blue;
-$h1-style: $lt-font;
+$h1-style: $accent-font;
+$h1-weight: $accent-bold-weight;
 $h1-height: 1.2em;;
 $h1-margin: 20px 0;
 
 $h2-size: 1.35em;
 $h2-color: $lt-blue;
-$h2-style: $reg-font;
-$h2-height: 1.5em;;
+$h2-style: $body-font;
+$h2-height: 1.5em;
 $h2-margin: 20px 0 0 0;
 
 $h3-size: 1.0em;
 $h3-color: $gray;
-$h3-style: $bold-font;
+$h3-style: $body-font;
 $h3-height: 1.0em;
 $h3-margin: 20px 0 3px 0;
 
 
-$footer-color: $gray;
+$footer-color: $dk-blue;
 $footer-border-color: $lt-bluegray;
 
 
@@ -107,6 +109,7 @@ h1, h2, h3, h4, strong {
 }
 
 strong {
-  font-family: $semi-font;
+  font-family: $body-font;
+  font-weight: $body-bold-weight;
 }
 

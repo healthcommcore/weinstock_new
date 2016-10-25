@@ -74,6 +74,7 @@
  */
 ?>
 <?php
+  $switch_css = $is_front ? 'home' : 'inside';
   $logo_width = 'col-sm-9';
   if (!empty($page['header_center'])) {
     $logo_width = 'col-sm-6';
@@ -102,33 +103,34 @@
     <?php endif; ?>
     </div>
   </div>
+  <div class="header-bottom"></div>
 </header>
 
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-</div>
-
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse navbar-color">
-        <nav role="navigation" class="container">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-    <?php endif; ?>
-
+<div class="nav-color-<?php echo $switch_css; ?>">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+  </div>
+  <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+    <div class="navbar-collapse collapse">
+      <nav role="navigation" class="container">
+        <?php if (!empty($primary_nav)): ?>
+          <?php print render($primary_nav); ?>
+        <?php endif; ?>
+        <?php if (!empty($secondary_nav)): ?>
+          <?php print render($secondary_nav); ?>
+        <?php endif; ?>
+        <?php if (!empty($page['navigation'])): ?>
+          <?php print render($page['navigation']); ?>
+        <?php endif; ?>
+      </nav>
+    </div>
+  <?php endif; ?>
+</div><!-- switch css -->
 <?php if (!empty($page['hero'])): ?>
   <div class="hero">
     <?php print render($page['hero']); ?>

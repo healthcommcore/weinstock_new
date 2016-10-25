@@ -67,6 +67,8 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <script src="https://use.typekit.net/ejm4sgm.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <?php print $scripts; ?>
 </head>
   <!--[if lt IE 9]>

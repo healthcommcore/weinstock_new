@@ -43,6 +43,7 @@ h3 {
 }
 
 header {
+  overflow: hidden;
   height: 151px;
   position: relative;
   background: url('../images/bars_repeat.png') 0 100% repeat-x;
@@ -92,14 +93,17 @@ header {
 
 .nav-color-home {
   position: absolute;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   z-index: 10;
+  margin-top: 2px;
   width: 100%;
 }
 
 .navbar-nav > li > a {
   color: $navlink-link;
+  font-family: $accent-font;
   font-size: $navlink-size;
+  font-weight: $med-weight;
   padding: $navlink-padding;
 }
 

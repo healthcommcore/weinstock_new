@@ -16,7 +16,7 @@
 
 /* Generic colors */
 $dk-blue: #03234A;
-$med-blue: #477aa6;
+$med-blue: #0044A2;
 $lt-blue: #9bc7ed;
 $dk-gray: #76787F;
 $gray: #5C6470;
@@ -50,11 +50,11 @@ $hero-img-img: url('../images/hero_img2_reduced.jpg') 0 0 no-repeat;
 
 /* navbar */
 $nav-color: $med-blue;
-$navlink-bkgrd-active: $lt-blue;
-$navlink-link: $white;
-$navlink-link-active: $med-blue;
-$navlink-padding: 15px 15px 15px 15px;
-$navlink-size: 20px;
+$navlink-bkgrd-active: $dk-blue;
+$navlink-link: $med-blue;
+$navlink-link-active: $white;
+$navlink-padding: 19px 32px 25px 32px;
+$navlink-size: 24px;
 $navlink-font: $accent-font;
 
 /* submenu */

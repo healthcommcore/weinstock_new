@@ -75,35 +75,52 @@
 ?>
 <?php
   $switch_css = $is_front ? 'home' : 'inside';
-  $logo_width = 'col-sm-9';
+  $logo_width = 'col-sm-7';
   if (!empty($page['header_center'])) {
-    $logo_width = 'col-sm-6';
+    $logo_width = 'col-sm-4';
   }
 ?>
 
 <header role="banner" class="">
-  <div class="container">
-    <div class="header-logo row">
-      <?php if ($logo): ?>
-      <div class="<?php print $logo_width; ?>">
-          <a class="logo navbar-btn" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-          </a>
+  <div class="header-logo-blue-left absolute">
+    <div class="header-logo-gray-right absolute"></div>
+    <div class="container">
+      <div class="header-logo row">
+        <?php if ($logo): ?>
+        <div class="<?php print $logo_width; ?>">
+            <a class="logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+            </a>
+          </div>
+        <?php endif; ?>
+      <?php if (!empty($page['header_center'])): ?>
+        <div class="col-sm-3">
+          <?php print render($page['header_center']); ?>
         </div>
       <?php endif; ?>
-    <?php if (!empty($page['header_center'])): ?>
-      <div class="col-sm-3">
-        <?php print render($page['header_center']); ?>
+      <?php if (!empty($page['header_right'])): ?>
+        <div class="col-sm-5">
+          <?php print render($page['header_right']); ?>
+        </div>
+      <?php endif; ?>
       </div>
-    <?php endif; ?>
-    <?php if (!empty($page['header_right'])): ?>
-      <div class="col-sm-3">
-        <?php print render($page['header_right']); ?>
-      </div>
-    <?php endif; ?>
     </div>
+    <?php if (!empty($page['header_search'])): ?>
+      <div class="header-search">
+        <div class="container">
+          <div class="absolute">
+            <div class="container">
+              <div class="col-sm-4 col-sm-offset-8">
+                <div class="search-styles">
+                  <?php print render($page['header_search']); ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
   </div>
-  <div class="header-bottom"></div>
 </header>
 
 <div class="nav-color-<?php echo $switch_css; ?>">

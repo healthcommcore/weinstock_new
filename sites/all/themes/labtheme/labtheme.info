@@ -11,6 +11,7 @@ base theme = bootstrap
 regions[navigation]     = 'Navigation'
 regions[header_right]   = 'Header right'
 regions[header_center]  = 'Header center'
+regions[header_search]  = 'Header search'
 regions[hero]           = 'Hero'
 regions[help]           = 'Help'
 regions[content]        = 'Content'

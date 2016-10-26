@@ -43,13 +43,50 @@ h3 {
 }
 
 header {
-  background: $header-color;
-  padding: $header-padding;
-  .logo img {
-    margin-top: 20px;
+  height: 151px;
+  position: relative;
+  background: url('../images/bars_repeat.png') 0 100% repeat-x;
+  margin-bottom: 5px;
+  @include border(top, 15px, $red);
+  .header-logo {
+    background: url('../images/header_top_right.png') 100% 0 no-repeat;
+    padding: $header-padding;
+    position: relative;
   }
-  .block-search {
-    margin: $search-position;
+  .header-logo-blue-left {
+    width: 100%;
+  }
+  .header-logo-gray-right {
+    background: $dk-gray;
+    left: 50%;
+    width: 50%;
+    height: 63px;
+  }
+  .logo { 
+    img {
+      margin-top: 45px;
+    }
+  }
+  .top-logos {
+    display: inline-block;
+    background: $red;
+    padding: 0 12px 14px 12px;
+    img {
+      margin: 0 7px;
+    }
+  }
+  .header-search {
+    margin-top: -45px;
+    margin-right: -25px;
+    .search-styles {
+      padding: 20px 24px;
+      background: $dk-blue;
+    }
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+  .header-bottom {
   }
 }
 
@@ -181,6 +218,10 @@ header {
 .img-float {
   float: left;
   margin: 5px 20px 3px 0;
+}
+
+.absolute {
+  position: absolute;
 }
 
 footer {

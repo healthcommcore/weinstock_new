@@ -24,6 +24,8 @@ $lt-gray: #ddd;
 $lt-bluegray: #c2ccd0;
 $white: #fff;
 $red: #A90533;
+$lt-yellow: #FFEBA5;
+$med-yellow: #FFDF7E;
 
 /* fonts */
 $body-font: 'ingra';
@@ -40,7 +42,7 @@ $header-padding: 0 0 30px;
 $search-position: 20px 0 0 0;
 $content-area-color: $white;
 
-$hero-position: 50px 0 0 30px;
+$hero-position: -50px 0 0 30px;
 $hero-size: 3.0em;
 $hero-color: $white;
 $hero-style: $accent-font;
@@ -99,7 +101,7 @@ $h3-margin: 20px 0 3px 0;
 
 
 $footer-color: $dk-blue;
-$footer-border-color: $lt-bluegray;
+$footer-border-color: $med-yellow;
 
 
 $footer-legal-size: 1.1em;

@@ -91,11 +91,16 @@ header {
   }
 }
 
+.nav-color-inside {
+  background: $lt-yellow;
+  position: relative;
+  width: 100%;
+}
+
 .nav-color-home {
   position: absolute;
   background: rgba(255, 255, 255, 0.5);
   z-index: 10;
-  margin-top: 2px;
   width: 100%;
 }
 
@@ -116,19 +121,29 @@ header {
 }
 
 .hero {
+  background: $white;
   width: auto;
-  @include border(top, 3px, $header-color);
-  @include border(bottom, 3px, $header-color);
-  h1 {
-    font-size: $hero-size;
-    color: $hero-color;
-    font-family: $hero-style;
-    margin: $hero-position;
-  }
+
+  /*
   .hero-img {
     height: $hero-img-ht;
     background: $hero-img-img;
     background-size: cover;
+  }
+  */
+}
+
+.hero-text {
+  background: rgba(3, 35, 74, 0.5);
+  padding: 70px 100px 50px 100px;
+  margin-top: -30px;
+  z-index: 50;
+  h1 {
+    font-size: $hero-size;
+    color: $hero-color;
+    font-family: $hero-style;
+    //margin: $hero-position;
+    display: inline-block;
   }
 }
 
@@ -229,7 +244,7 @@ header {
 }
 
 footer {
-  @include border(top, 5px, $footer-border-color);
+  @include border(top, 21px, $footer-border-color);
 }
 
 .footer {

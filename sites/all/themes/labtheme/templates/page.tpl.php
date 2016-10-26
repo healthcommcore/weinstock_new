@@ -153,6 +153,17 @@
     <?php print render($page['hero']); ?>
   </div>
 <?php endif; ?>
+<?php if (!empty($page['hero_text'])): ?>
+  <div class="container">
+    <div class="absolute">
+      <div class="container">
+        <div class="hero-text">
+          <?php print render($page['hero_text']); ?>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 <div class="main-container content-area-color">
   <div class="container">
     <div class="row">

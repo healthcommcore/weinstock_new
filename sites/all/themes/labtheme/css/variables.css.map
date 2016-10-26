@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AA2GA,kBAAuB,CACrB,WAAW,CAAE,MAAM,CAGrB,MAAO,CACL,WAAW,CAjBF,OAAU,CAkBnB,WAAW,CAhFM,GAAG",
+"mappings": "AA6GA,kBAAuB,CACrB,WAAW,CAAE,MAAM,CAGrB,MAAO,CACL,WAAW,CAjBF,OAAU,CAkBnB,WAAW,CAhFM,GAAG",
 "sources": ["../custom_sass/variables.scss"],
 "names": [],
 "file": "variables.css"

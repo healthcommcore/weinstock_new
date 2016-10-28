@@ -148,28 +148,32 @@
     </div>
   <?php endif; ?>
 </div><!-- switch css -->
+
 <?php if (!empty($page['hero'])): ?>
   <div class="hero">
     <?php print render($page['hero']); ?>
   </div>
 <?php endif; ?>
 <?php if (!empty($page['hero_text'])): ?>
-  <div class="container">
-    <div class="absolute">
-      <div class="container">
-        <div class="hero-text">
+  <div class="hero-text-wrapper">
+    <div class="container">
+      <div class="hero-text absolute container">
           <?php print render($page['hero_text']); ?>
-        </div>
       </div>
     </div>
   </div>
 <?php endif; ?>
-<div class="main-container content-area-color">
+
+<div class="main-container content-area-color content-<?php echo $switch_css; ?>">
   <div class="container">
     <div class="row">
-    <div class="main-container-margin">
+     <?php if (!empty($title) && !$is_front) : ?>
+        <h1><?php print $title; ?></h1>
+      <?php endif; ?>
+   <div class="main-container-margin">
     <?php if (!empty($page['left_column'])): ?>
-      <aside class="col-sm-3 hidden-xs" role="complementary">
+    <?php $col_size = $is_front ? '4' : '3'; ?>
+      <aside class="col-sm-<?php echo $col_size; ?> hidden-xs" role="complementary">
         <?php print render($page['left_column']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
@@ -179,9 +183,6 @@
       <a id="main-content"></a>
       <div class="main-content-margin">
         <?php print render($title_prefix); ?>
-        <?php if (!empty($title) && !$is_front) : ?>
-          <h1><?php print $title; ?></h1>
-        <?php endif; ?>
         <?php print render($title_suffix); ?>
         <?php print $messages; ?>
         <?php if (!empty($tabs)): ?>
@@ -215,12 +216,12 @@
 	<?php if (!empty($page['footer_logos']) || !empty($page['footer_legal'])): ?>
 		<div class="row">
 			<?php if (!empty($page['footer_logos'])): ?>
-				<div class="col-md-8 footer-logos">
+				<div class="col-md-3 footer-logos">
 					<?php print render($page['footer_logos']); ?>
 				</div>
 			<?php endif; ?>
 			<?php if (!empty($page['footer_legal'])): ?>
-				<div class="col-md-4 footer-legal">
+				<div class="col-md-4 col-md-offset-5 footer-legal">
 					<?php print render($page['footer_legal']); ?>
 				</div>
 			<?php endif; ?>

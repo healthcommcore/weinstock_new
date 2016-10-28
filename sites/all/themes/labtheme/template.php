@@ -9,17 +9,24 @@
  * Implements hook_preprocess_page().
  */
 function labtheme_preprocess_page(&$variables) {
-  if (!empty($variables['page']['left_column'])) {
-    $variables['content_column_class'] = ' class="col-md-9 col-sm-12"';
-  }
-  if (!empty($variables['page']['right_column'])) {
-    $variables['content_column_class'] = ' class="col-md-8 col-sm-12"';
-  }
 	if ( isset($variables['navbar_classes_array']) ) {
 		if ($index = array_search('container', $variables['navbar_classes_array']) ) {
 			array_splice( $variables['navbar_classes_array'], $index, 1);
 		}
 	}
+  // Check if we're on the front page and adjust column width to 8
+  if ($variables['is_front']) {
+    $variables['content_column_class'] = ' class="col-md-8 col-sm-12"';
+  }
+  else {
+    // Check if there is a right and/or left column
+    if (!empty($variables['page']['left_column'])) {
+      $variables['content_column_class'] = ' class="col-md-9 col-sm-12"';
+    }
+    if (!empty($variables['page']['right_column'])) {
+      $variables['content_column_class'] = ' class="col-md-8 col-sm-12"';
+    }
+  }
 }
 
 /**

@@ -14,16 +14,21 @@ a {
   color: $link-color;
 }
 
+/*
 h1, h2, h3, h4, strong {
   font-weight: normal;
 }
+*/
 
 h1 {
   font-size: $h1-size;
+  font-weight: $h1-weight;
   color: $h1-color;
   font-family: $h1-style;
   line-height: $h1-height;
   margin: $h1-margin;
+  @include border(bottom, 2px, $dk-blue);
+  padding: 0 0 5px 332px;
 }
 
 h2 {
@@ -33,6 +38,8 @@ h2 {
   line-height: $h2-height;
   margin: $h2-margin;
 }
+
+
 
 h3 {
   font-size: $h3-size;
@@ -86,6 +93,11 @@ header {
     .form-group {
       margin-bottom: 0;
     }
+    .btn-primary {
+      background: $dk-gray;
+      border: none;
+      padding: 7px 13px;
+    }
   }
   .header-bottom {
   }
@@ -124,41 +136,41 @@ header {
   background: $white;
   width: auto;
 
-  /*
-  .hero-img {
-    height: $hero-img-ht;
-    background: $hero-img-img;
-    background-size: cover;
-  }
-  */
+}
+.hero-text-wrapper {
+  background: $white;
+  height: 145px;
 }
 
 .hero-text {
   background: rgba(3, 35, 74, 0.5);
-  padding: 70px 100px 50px 100px;
-  margin-top: -30px;
+  padding: 40px 100px;
+  margin-top: -40px;
+  margin-left: -13px;
   z-index: 50;
   h1 {
     font-size: $hero-size;
     color: $hero-color;
     font-family: $hero-style;
-    //margin: $hero-position;
     display: inline-block;
+    line-height: 1.3;
+    border: none;
+    margin: 20px 0 10px 0;
+    padding: 0;
   }
 }
 
 .submenu {
-  text-align: right;
   font-size: $submenu-link-size;
   font-family: $submenu-link-font;
+  line-height: 1.1;
   //text-align: right;
   .nav {
     width: 80%;
     float: right;
-    margin-top: 20px;
     li {
       a {
-        font-weight: normal;
+        font-weight: $accent-bold-weight;
         color: $submenu-link-link;
         display: inline-block;
         padding: 3px 0 3px 18px;
@@ -195,36 +207,56 @@ header {
 }
 
 .page-content {
+  p {
+    margin-bottom: 20px;
+  }
   line-height: $body-height;
 }
 
-.home-news {
-  font-family: $body-font;
-  padding: 30px 20px;
-  color: $white;
-  font-size: 0.88em;
-  h2, a {
-    color: $white;
+.content-home {
+  .main-container-margin {
+    margin-top: 60px;
   }
-  h2 {
-    font-family: $accent-font;
-    font-size: 2.0em;
-    @include border('bottom', 1px, $white);
-    display: inline-block;
-    margin-bottom: 20px;
+}
+
+.content-inside {
+  .page-content {
+    .view-news {
+      padding-left: 0;
+    }
   }
-  a {
-    text-decoration: underline;
+}
+
+h2.block-title {
+  color: $med-blue;
+  @include border(top, 2px, $med-blue);
+  font-size: 1.9em;
+  font-weight: $accent-bold-weight;
+  padding-left: 15px;
+  margin-bottom: 17px;
+}
+
+.content-home .page-content p,
+.view-news {
+  padding-left: 30px;
+}
+
+.homepage-news {
+  .view-news {
+    font-size: 120%;
+    font-weight: $med-weight;
+    line-height: 1.2;
+    color: $dk-gray;
+    .news-headline {
+      margin-bottom: 18px;
+    }
+    p {
+      margin: 0;
+    }
+    p:nth-child(2) {
+      font-size: 80%;
+    }
   }
-  /*
-  .views-field-title,
-  .views-field-field-date {
-    font-family: $bold-font;
-  }
-  .views-row {
-    margin-bottom: 20px;
-  }
-  */
 }
 
 .no-bullets {
@@ -237,6 +269,10 @@ header {
 .img-float {
   float: left;
   margin: 5px 20px 3px 0;
+}
+
+.staff-member {
+  margin-bottom: 40px;
 }
 
 .absolute {
@@ -253,8 +289,26 @@ footer {
 }
 
 .footer-logos {
-  p {
-    margin-bottom: 20px;
+  float: left;
+  text-align: center;
+  .weinstock-footer-logo {
+    width: 264px;
+    margin-bottom: 3px;
+  }
+  .institution-logos {
+    display: inline-block;
+    padding: 5px;
+    @include border(top, 1px, $white);
+    p {
+      float: left;
+      margin: 10px 7px 7px;
+    }
+    .dfci-footer-logo {
+      width: 99px;
+    }
+    .hms-footer-logo {
+      width: 82px;
+    }
   }
 }
 

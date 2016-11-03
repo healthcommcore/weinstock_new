@@ -89,7 +89,7 @@
         <?php if ($logo): ?>
         <div class="<?php print $logo_width; ?>">
             <a class="logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+              <img class="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
             </a>
           </div>
         <?php endif; ?>
@@ -216,12 +216,12 @@
 	<?php if (!empty($page['footer_logos']) || !empty($page['footer_legal'])): ?>
 		<div class="row">
 			<?php if (!empty($page['footer_logos'])): ?>
-				<div class="col-md-3 footer-logos">
+				<div class="col-md-4 footer-logos">
 					<?php print render($page['footer_logos']); ?>
 				</div>
 			<?php endif; ?>
 			<?php if (!empty($page['footer_legal'])): ?>
-				<div class="col-md-4 col-md-offset-5 footer-legal">
+				<div class="col-md-4 col-md-offset-4 footer-legal">
 					<?php print render($page['footer_legal']); ?>
 				</div>
 			<?php endif; ?>

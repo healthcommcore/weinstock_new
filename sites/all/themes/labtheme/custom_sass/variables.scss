@@ -81,16 +81,17 @@ $main-container-margin: 60px 0 0 0;
 $main-content-margin: 0 60px 80px 30px;
 
 
-$h1-size: 3.0em;
+$h1-size: 2.9em;
 $h1-color: $med-blue;
 $h1-style: $accent-font;
 $h1-weight: $accent-bold-weight;
 $h1-height: 1;
 $h1-margin: 80px 0 40px 0;
+$h1-padding: 0 0 5px 332px;
 
 $h2-size: 1.6em;
-$h2-color: $dk-blue;
-$h1-weight: $med-weight;
+$h2-color: $dk-gray;
+$h2-weight: $accent-bold-weight;
 $h2-style: $accent-font;
 $h2-height: 1.5em;
 $h2-margin: 20px 0 0 0;
@@ -118,3 +119,17 @@ strong {
   font-weight: $body-bold-weight;
 }
 
+////////////
+// MEDIUM //
+////////////
+
+// Nav
+$navlink-size-md: 20px;
+$navlink-padding-md: 14px 28px 20px 28px;
+
+// Hero
+$hero-size-md: 2.1em;
+
+$h1-size-md: 2.6em;
+$h1-margin-md: 70px 0 40px 0;
+$h1-padding-md: 0 20px 5px 284px;

@@ -408,6 +408,35 @@ footer {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+
+  header {
+    background-size: 7.5em;
+    height: 132px;
+    .header-logo {
+      background-size: 90%;
+      background-position: 200% 0;
+    }
+    .top-logos {
+      display: block;
+      padding-bottom: 10px;
+      a {
+        float: left;
+        width: 45%;
+        margin-right: 10px;
+      }
+    }
+    .header-search {
+      margin-top: -37px;
+      margin-right: -30px;
+      .search-styles {
+        padding: 12px 20px;
+      }
+    }
+  }
+  .navbar-nav > li > a {
+    font-size: $navlink-size-sm;
+    padding: $navlink-padding-sm;
+  }
 }
 
 @media (max-width: 767px) {

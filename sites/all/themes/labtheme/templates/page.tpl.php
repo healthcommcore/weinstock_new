@@ -77,7 +77,7 @@
   $switch_css = $is_front ? 'home' : 'inside';
   $logo_width = 'col-sm-7';
   if (!empty($page['header_center'])) {
-    $logo_width = 'col-sm-4';
+    $logo_width = 'col-sm-4 col-xs-12';
   }
 ?>
 
@@ -173,7 +173,8 @@
    <div class="main-container-margin">
     <?php if (!empty($page['left_column'])): ?>
     <?php $col_size = $is_front ? '4' : '3'; ?>
-      <aside class="col-sm-<?php echo $col_size; ?> hidden-xs" role="complementary">
+    <?php $left_col_vis = $is_front ? '' : 'hidden-xs'; ?>
+      <aside class="col-sm-<?php echo $col_size . " " . $left_col_vis; ?>" role="complementary">
         <?php print render($page['left_column']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>

@@ -491,5 +491,55 @@ footer {
 }
 
 @media (max-width: 767px) {
+  header {
+    border: none;
+    background: none;
+    height: 132px;
+    .header-logo {
+      height: 132px;
+      background: url('../images/header_top_right_mobile.png') 100% 100% no-repeat;
+    }
+    .header-logo-gray-right {
+      background: none;
+    }
+    .logo {
+      position: absolute;
+      width: 80%;
+      padding: 7px 0;
+      left: 11%;
+    }
+
+    .top-logos {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 31px;
+      width: 100%;
+      text-align: center;
+      div {
+        display: inline-block;
+      }
+      a {
+        display: inline-block;
+        width: 100px;
+        padding: 4px 10px;
+      }
+    }
+  }
+
+  .hero-text-wrapper {
+    height: auto;
+  }
+
+  .hero-text {
+    margin: 0 -15px;
+    position: relative;
+    padding: 20px 45px;
+    h1 {
+      font-size: $hero-size-xs;
+      line-height: 1.4;
+      margin: 10px 0;
+    }
+  }
 }
 

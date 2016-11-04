@@ -437,6 +437,57 @@ footer {
     font-size: $navlink-size-sm;
     padding: $navlink-padding-sm;
   }
+
+  .hero-text {
+    padding: 20px 60px;
+    h1 {
+      font-size: $hero-size-sm;
+    }
+  }
+
+  .content-home {
+    .main-container-margin {
+      margin-top: 20px;
+    }
+  }
+
+  h2.block-title {
+    font-size: 1.5em;
+    margin-bottom: 7px;
+  }
+
+  .homepage-news {
+    .view-news {
+      font-size: 100%;
+    }
+  }
+
+  .main-container-margin {
+    margin: $main-container-margin-sm;
+  }
+
+  .main-content-margin {
+    margin: $main-content-margin-sm;
+  }
+
+  h1 {
+    font-size: $h1-size-sm;
+    margin: $h1-margin-sm;
+    padding: $h1-padding-sm;
+  }
+
+  .submenu {
+    font-size: $submenu-link-size-sm;
+    .nav {
+      float: left;
+      li {
+        a {
+          margin-bottom: 19px;
+        }
+      }
+    }
+  }
+
 }
 
 @media (max-width: 767px) {

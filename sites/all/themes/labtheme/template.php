@@ -16,15 +16,15 @@ function labtheme_preprocess_page(&$variables) {
 	}
   // Check if we're on the front page and adjust column width to 8
   if ($variables['is_front']) {
-    $variables['content_column_class'] = ' class="col-md-8 col-sm-12"';
+    $variables['content_column_class'] = ' class="col-sm-8 col-xs-12"';
   }
   else {
     // Check if there is a right and/or left column
     if (!empty($variables['page']['left_column'])) {
-      $variables['content_column_class'] = ' class="col-md-9 col-sm-12"';
+      $variables['content_column_class'] = ' class="col-sm-9 col-xs-12"';
     }
     if (!empty($variables['page']['right_column'])) {
-      $variables['content_column_class'] = ' class="col-md-8 col-sm-12"';
+      $variables['content_column_class'] = ' class="col-sm-8 col-sm-12"';
     }
   }
 }

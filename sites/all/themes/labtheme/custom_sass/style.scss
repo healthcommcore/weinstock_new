@@ -405,6 +405,11 @@ footer {
 }
 
 @media (max-width: 991px) {
+  .homepage-news {
+    .view-news {
+      font-size: 100%;
+    }
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -456,11 +461,6 @@ footer {
     margin-bottom: 7px;
   }
 
-  .homepage-news {
-    .view-news {
-      font-size: 100%;
-    }
-  }
 
   .main-container-margin {
     margin: $main-container-margin-sm;
@@ -525,6 +525,62 @@ footer {
         padding: 4px 10px;
       }
     }
+    .header-search {
+      margin-top: -40px;
+      margin-right: 0;
+      .search-styles {
+        padding: 8px 18px;
+      }
+      .form-control {
+        height: 28px;
+      }
+      .btn-primary {
+        padding: 4px 10px;
+      }
+      .absolute {
+        position: relative;
+      }
+    }
+
+  }
+
+  .navbar-collapse {
+    background: $dk-blue;
+  }
+
+  .nav-color-home {
+    .navbar-toggle {
+      .icon-bar {
+        background: $white;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    padding: 6px 8px;
+    margin: 6px 13px 6px;
+    .icon-bar {
+      background: $dk-blue;
+      height: 4px;
+      width: 27px;
+    }
+  }
+  
+  .navbar-nav > li > a {
+    color: $navlink-link-xs;
+    font-family: $accent-font;
+    font-size: $navlink-size-xs;
+    font-weight: $lt-weight;
+    padding: $navlink-padding-xs;
+    margin-bottom: 5px;
+  }
+
+  .nav > li > a:hover,
+  .nav > li > a.active,
+  .nav > li.active-trail a.active-trail,
+  .nav > li > a:focus {
+    background: $navlink-bkgrd-active-xs;
+    color: $navlink-link-active-xs;
   }
 
   .hero-text-wrapper {
@@ -532,13 +588,62 @@ footer {
   }
 
   .hero-text {
+    z-index: 0;
     margin: 0 -15px;
     position: relative;
-    padding: 20px 45px;
+    padding: 13px 30px;
     h1 {
+      font-weight: $reg-weight;
       font-size: $hero-size-xs;
       line-height: 1.4;
       margin: 10px 0;
+    }
+  }
+
+  .content-home {
+    .main-container-margin {
+      margin-top: 5px;
+    }
+  }
+
+  /*
+  h1 {
+    font-size: $h1-size-sm;
+    margin: $h1-margin-sm;
+    padding: $h1-padding-sm;
+  }
+  */
+
+  h2.block-title {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+  }
+
+  .content-home .page-content p,
+  .view-news {
+    padding-left: 15px;
+  }
+
+  .main-content-margin {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .footer {
+    margin-top: 5px;
+    .footer-logos {
+      margin-bottom: 20px;
+    }  
+    .footer-legal {
+      text-align: center;
+      ul {
+        float: none;
+        display: inline-block;
+        margin: 0;
+      }
+      .legal {
+        text-align: center;
+      }
     }
   }
 }

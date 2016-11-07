@@ -217,12 +217,12 @@
 	<?php if (!empty($page['footer_logos']) || !empty($page['footer_legal'])): ?>
 		<div class="row">
 			<?php if (!empty($page['footer_logos'])): ?>
-				<div class="col-md-4 col-sm-5 footer-logos">
+				<div class="col-md-4 col-sm-5 col-xs-12 footer-logos">
 					<?php print render($page['footer_logos']); ?>
 				</div>
 			<?php endif; ?>
 			<?php if (!empty($page['footer_legal'])): ?>
-				<div class="col-md-4 col-sm-5 col-md-offset-4 col-sm-offset-2 footer-legal">
+				<div class="col-md-4 col-sm-5 col-md-offset-4 col-sm-offset-2 col-xs-12 footer-legal">
 					<?php print render($page['footer_legal']); ?>
 				</div>
 			<?php endif; ?>

@@ -42,7 +42,6 @@ h2 {
 }
 
 
-
 h3 {
   font-size: $h3-size;
   color: $h3-color;
@@ -210,6 +209,7 @@ header {
 }
 
 .page-content {
+  .news-item,
   p {
     margin-bottom: 20px;
   }
@@ -583,6 +583,33 @@ footer {
     color: $navlink-link-active-xs;
   }
 
+  nav li.active-trail {
+    .dropdown-menu {
+      top: 0;
+      display: inline-block;
+      position: relative;
+      float: none;
+      background: none;
+      box-shadow: none;
+      border: none;
+      margin-left: 20px;
+    }
+
+    .dropdown-menu > li > a {
+      color: $white;
+      margin: 10px 0;
+      font-size: 0.95em;
+      white-space: normal;
+    }
+
+    .dropdown-menu > li > a.active,
+    .dropdown-menu > li.active-trail > a,
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus {
+      color: $dk-blue;
+    }
+  }
+
   .hero-text-wrapper {
     height: auto;
   }
@@ -606,14 +633,6 @@ footer {
     }
   }
 
-  /*
-  h1 {
-    font-size: $h1-size-sm;
-    margin: $h1-margin-sm;
-    padding: $h1-padding-sm;
-  }
-  */
-
   h2.block-title {
     font-size: 1.3em;
     margin-bottom: 5px;
@@ -624,9 +643,31 @@ footer {
     padding-left: 15px;
   }
 
+  .main-container-margin {
+    margin: 30px 0 0 0;
+  }
+
   .main-content-margin {
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: $h1-size-xs;
+    margin: $h1-margin-xs;
+    padding: $h1-padding-xs;
+  }
+
+  .staff-member {
+    .img-float {
+      float: none;
+      margin: 0 0 15px 0;
+      display: block;
+    }
+    a {
+      word-wrap: break-word;
+    }
   }
   
   .footer {
